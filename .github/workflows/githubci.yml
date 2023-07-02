@@ -60,6 +60,7 @@ jobs:
           - 'waveshare_nrf52840_eval'
           - 'xiao_nrf52840_ble'
           - 'xiao_nrf52840_ble_sense'
+          - 'hotp4ck'
                     
     steps:
     - name: Setup Python
