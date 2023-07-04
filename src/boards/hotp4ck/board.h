@@ -31,7 +31,7 @@
 /* LED
  *------------------------------------------------------------------*/
 #define LEDS_NUMBER           1
-#define LED_PRIMARY_PIN       _PINNUM(0, 20)
+#define LED_PRIMARY_PIN       _PINNUM(0, 29)
 #define LED_STATE_ON          1
 
 /*
@@ -44,7 +44,7 @@
 /* BUTTON
  *------------------------------------------------------------------*/
 #define BUTTONS_NUMBER        2
-#define BUTTON_1              _PINNUM(1, 18) // RESET
+#define BUTTON_1              _PINNUM(0, 18) // RESET
 #define BUTTON_2              _PINNUM(0, 21) // unconnected
 #define BUTTON_PULL           NRF_GPIO_PIN_PULLUP
 
@@ -52,7 +52,7 @@
 // BLE OTA
 //--------------------------------------------------------------------+
 #define BLEDIS_MANUFACTURER   "Hotp4ck"
-#define BLEDIS_MODEL          "Hotp4ck ver A"
+#define BLEDIS_MODEL          "Hotp4ck"
 
 //--------------------------------------------------------------------+
 // USB
@@ -62,9 +62,9 @@
 #define USB_DESC_CDC_ONLY_PID  0x0029
 
 //------------- UF2 -------------//
-#define UF2_PRODUCT_NAME      "hotp4ck_ver_a"
+#define UF2_PRODUCT_NAME      "Hotp4ck Ver A"
 #define UF2_VOLUME_LABEL      "HTPCK"
-#define UF2_BOARD_ID          "hotp4ck_ver_a"
+#define UF2_BOARD_ID          "Hotp4ck Ver A"
 #define UF2_INDEX_URL         "https://github.com/yg3988/"
 
-#endif // _FEATHER_NRF52840_SENSE_H
+#endif // HOTP4CK_H
