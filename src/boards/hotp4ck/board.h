@@ -63,7 +63,7 @@
 
 //------------- UF2 -------------//
 #define UF2_PRODUCT_NAME      "Hotp4ck Ver A"
-#define UF2_VOLUME_LABEL      "HTPCK"
+#define UF2_VOLUME_LABEL      "HOTP4CK"
 #define UF2_BOARD_ID          "Hotp4ck Ver A"
 #define UF2_INDEX_URL         "https://github.com/yg3988/"
 
