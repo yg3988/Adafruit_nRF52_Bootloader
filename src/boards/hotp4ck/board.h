@@ -26,12 +26,13 @@
 #define HOTP4CK_H
 
 #define _PINNUM(port, pin)    ((port)*32 + (pin))
+#define UICR_REGOUT0_VALUE UICR_REGOUT0_VOUT_3V3
 
 /*------------------------------------------------------------------*/
 /* LED
  *------------------------------------------------------------------*/
 #define LEDS_NUMBER           1
-#define LED_PRIMARY_PIN       _PINNUM(0, 29)
+#define LED_PRIMARY_PIN       _PINNUM(0, 31)
 #define LED_STATE_ON          1
 
 /*
