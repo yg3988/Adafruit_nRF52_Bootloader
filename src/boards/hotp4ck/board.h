@@ -58,9 +58,9 @@
 //--------------------------------------------------------------------+
 // USB
 //--------------------------------------------------------------------+
-#define USB_DESC_VID           0x239A
-#define USB_DESC_UF2_PID       0x0029
-#define USB_DESC_CDC_ONLY_PID  0x0029
+#define USB_DESC_VID           0x1209
+#define USB_DESC_UF2_PID       0x4850
+#define USB_DESC_CDC_ONLY_PID  0x4850
 
 //------------- UF2 -------------//
 #define UF2_PRODUCT_NAME      "Hotp4ck Ver A"
