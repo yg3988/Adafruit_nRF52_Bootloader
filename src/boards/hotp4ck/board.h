@@ -63,9 +63,9 @@
 #define USB_DESC_CDC_ONLY_PID  0x4850
 
 //------------- UF2 -------------//
-#define UF2_PRODUCT_NAME      "Hotp4ck Ver A"
+#define UF2_PRODUCT_NAME      "Hotp4ck"
 #define UF2_VOLUME_LABEL      "HOTP4CK"
-#define UF2_BOARD_ID          "Hotp4ck Ver A"
+#define UF2_BOARD_ID          "nRF52840-Hotp4ck-A" //https://github.com/microsoft/uf2#files-exposed-by-bootloaders
 #define UF2_INDEX_URL         "https://github.com/yg3988/"
 
 #endif // HOTP4CK_H
