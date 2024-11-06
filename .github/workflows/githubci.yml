@@ -9,7 +9,24 @@ on:
       - created
 
 jobs:
+  set-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set matrix
+        id: set-matrix
+        working-directory: src/boards
+        run: |
+          MATRIX_JSON=$(ls -d */ | sed 's/\/$//' | jq -R -s -c 'split("\n")[:-1]')
+          echo "matrix=$MATRIX_JSON"
+          echo "matrix=$MATRIX_JSON" >> $GITHUB_OUTPUT
+
   build:
+    needs: set-matrix
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -61,43 +78,29 @@ jobs:
           #- 'xiao_nrf52840_ble'
           #- 'xiao_nrf52840_ble_sense'
           - 'hotp4ck'
-                    
-    steps:
-    - name: Setup Python
-      uses: actions/setup-python@v3
 
+    steps:
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
         submodules: true
 
-    - name: Checkout linkermap
-      uses: actions/checkout@v3
-      with:
-         repository: hathach/linkermap
-         path: linkermap
-
     - name: Install ARM GCC
       uses: carlosperate/arm-none-eabi-gcc-action@v1
       with:
-        release: '10-2020-q4'
+        release: '12.3.Rel1'
 
     - name: Install Tools
       run: |
-        pip3 install adafruit-nrfutil uritemplate requests intelhex
-        pip3 install linkermap/
+        pip3 install adafruit-nrfutil uritemplate requests intelhex setuptools
 
     - name: Build
       run: |
-        arm-none-eabi-gcc --version
         make BOARD=${{ matrix.board }} all
         make BOARD=${{ matrix.board }} copy-artifact
 
-    - name: Linker Map
-      run: make BOARD=${{ matrix.board }} linkermap
-
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.board }}
         path: _bin/${{ matrix.board }}
