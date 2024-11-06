@@ -77,7 +77,8 @@ jobs:
           #- 'waveshare_nrf52840_eval'
           #- 'xiao_nrf52840_ble'
           #- 'xiao_nrf52840_ble_sense'
-          - 'hotp4ck'
+          #- 'hotp4ck'
+          - 'hotp4ck_rev_c'
 
     steps:
     - name: Checkout Code
